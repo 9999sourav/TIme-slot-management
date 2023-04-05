@@ -1,0 +1,15 @@
+Create slot- http://localhost:4400/admin/createSlots
+Add interviewer- http://localhost:4400/admin/addInterviewer
+Add interviewee - http://localhost:4400/interviewee
+Interviewer cancel slot - http://localhost:4400/interviewer/cancelslot/{slotID}
+Book slot - http://localhost:4400/interviewee/book/{slotID}
+Give availability - http://localhost:4400/interviewer/addslots/{slotID}
+See available slots - http://localhost:4400/interviewee/allSlots
+intervieweeCancel slot - http://localhost:4400/interviewee/delete/1
+Total no of interviews for today - http://localhost:4400/questions/count/3/2023-02-17
+Number of candidates booked for a perticular slot - http://localhost:4400/questions/name/3/2023-02-17
+Name of the interviewees available for the slot - http://localhost:4400/questions/name/2023-02-17
+TOTAL NO OF SLOTS FOR THE DATE - http://localhost:4400/questions/count/2023-02-16
+Total no of interviewers - http://localhost:4400/questions/interviewer/2023-02-16
+Slot utilization - http://localhost:4400/questions/getUtilization/2023-02-18
+Slotwise utilization - http://localhost:4400/questions/getUtilizationBySlot/4
