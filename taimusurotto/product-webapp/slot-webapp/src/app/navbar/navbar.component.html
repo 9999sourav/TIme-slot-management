@@ -1,0 +1,97 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]=false>
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <div *ngIf="checkRole()=='Admin' && getUrl()!='adminDashboard'">
+        <a mat-list-item routerLink="adminDashboard"><i class="fa-regular fa-id-badge"></i> Dashboard</a>
+      </div>
+      <div *ngIf="checkRole()=='Interviewer' && getUrl()!='interviewer'">
+        <a mat-list-item routerLink="interviewer"><i class="fa-regular fa-id-badge"></i> Dashboard</a>
+      </div>
+      <a mat-list-item routerLink="home"><i class="fa-solid fa-house"></i> Home</a>
+      <div *ngIf="checkRole()==null">
+        <a mat-list-item routerLink="login"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+      </div>
+      <div *ngIf="checkRole()=='Admin'">
+        <a mat-list-item (click)="changePasswordModal()"><i class="fa-solid fa-lock"></i> Change Password</a>
+        <a mat-list-item routerLink="slotview"><i class="fa-solid fa-clock"></i> Add Slots</a>
+        <a mat-list-item routerLink="manageSlots"><i class="fa-solid fa-business-time"></i> Manage Slots</a>
+        <a mat-list-item routerLink="addInterviewer"><i class="fa-solid fa-user-plus"></i> Add Interviewer</a>
+        <a mat-list-item routerLink="addAdmin"><i class="fa-solid fa-user-plus"></i> Add Admin</a>
+        <a mat-list-item routerLink="viewAllSlots"><i class="fa-solid fa-database"></i> Show Master Table</a>
+        <a mat-list-item routerLink="analyticsDashboard"><i class="fa-solid fa-magnifying-glass-chart"></i> Show
+          Analysis</a>
+      </div>
+      <div *ngIf="checkRole()=='Interviewer'">
+        <a mat-list-item (click)="changePasswordModal()"><i class="fa-solid fa-lock"></i> Change Password</a>
+        <a mat-list-item routerLink="showSlots"><i class="fa-solid fa-bookmark"></i> Show All Bookings</a>
+        <a mat-list-item routerLink="markAvailability"><i class="fa-solid fa-marker"></i> Mark Availability</a>
+      </div>
+      <div *ngIf="checkRole()!=null">
+        <a mat-list-item (click)="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar id="head">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" class="col-1">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div>
+        <span class="col-9 col-md-9 col-sm-8 col-xm-4"><a routerLink="home"><img src="../../assets//images/Logo2.png"
+          style="max-width: 170px; height: 6vh; border-radius: 10px;"></a></span>
+      </div>
+
+      <div class="col-3" style="padding-left: 10%;" *ngIf="!checkLogin() && getUrl()=='home'">
+        <button routerLink="/login" type="button" mat-raised-button>Login</button>
+      </div>
+
+      <div id="avatarSm" *ngIf="checkLogin() && getUrl()!='login'">
+        <img src="../../assets/images/avatar.jpg" alt="Avatar" class="avatar" mat-button
+          [matMenuTriggerFor]="belowMenu">
+        <mat-menu #belowMenu="matMenu" xPosition="before">
+          <div class="container" style="width: 250px; padding: 20px;">
+            <div class="row">
+              <img src="../../assets/images/Logo.png" alt="...." style="max-width: 200px; margin: auto !important;">
+            </div>
+            <hr>
+              <div class="row">
+                <button mat-raised-button style="max-width: 200px; margin: 10px auto !important;"
+                  (click)="changePasswordModal()"><i class="fa-solid fa-lock"></i> Change Password</button>
+              </div>
+              <div class="row">
+                <button mat-raised-button style="max-width: 200px; margin: 10px auto !important;" (click)="logout()"><i
+                    class="fa-solid fa-right-from-bracket"></i> Logout</button>
+              </div>
+            </div>
+        </mat-menu>
+      </div>
+      
+      <div id="avatar" class="col-2 col-md-2 col-sm-2 col-xs-4" style="text-align: end !important;" *ngIf="checkLogin() && getUrl()!='login'">
+        {{Email}} &nbsp;
+        <img src="../../assets/img/pp.png" alt="Avatar" class="avatar" mat-button
+          [matMenuTriggerFor]="belowMenu">
+        <mat-menu #belowMenu="matMenu" xPosition="before">
+          <div class="container" style="width: 250px; padding: 20px;">
+            <div class="row">
+              <img src="../../assets/images/Logo.png" alt="...." style="max-width: 200px; margin: auto !important;">
+            </div>
+            <hr>
+              <div class="row">
+                <button mat-raised-button style="max-width: 200px; margin: 10px auto !important;"
+                  (click)="changePasswordModal()"><i class="fa-solid fa-lock"></i> Change Password</button>
+              </div>
+              <div class="row">
+                <button mat-raised-button style="max-width: 200px; margin: 10px auto !important;" (click)="logout()"><i
+                    class="fa-solid fa-right-from-bracket"></i> Logout</button>
+              </div>
+            </div>
+        </mat-menu>
+      </div>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,12 @@
+mat-chip{
+  background-color: #4BB543 !important;
+  font-size: 12px !important;
+}
+
+#open{
+  font-size: 10px !important;
+}
+
+.selected{
+  background-color: aquamarine !important;
+}

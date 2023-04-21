@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "datatables.net": "^1.13.2",
+    "datatables.net-dt": "^1.13.2"
+  },
+  "devDependencies": {
+    "@types/chart.js": "^2.9.37"
+  }
+}

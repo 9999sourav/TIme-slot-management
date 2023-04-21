@@ -1,0 +1,87 @@
+version: "2"
+services:
+
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+      MYSQL_PASSWORD: root
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    restart: always
+
+
+  prometheus:
+    container_name: prom
+    image: prom/prometheus
+    restart: always
+    hostname: localhost
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+
+  grafana:
+    container_name: graf
+    image: grafana/grafana
+    restart: always
+    hostname: localhost
+    ports:
+      - 3000:3000
+
+  api-gateway:
+    build: api-gateway/
+    container_name: api-gateway
+    depends_on:
+      - eureka-server
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8080:8080
+
+
+  eureka-server:
+    build: eureka-server
+    container_name: eureka-server
+    hostname: localhost
+    restart: always
+    ports:
+      - 8761:8761
+
+  slot-management-service:
+    build: slot-management-service/
+    image: slot-management-service
+    container_name: slot-service
+    depends_on:
+       - mysql
+    restart: always
+    network_mode: "host"
+    hostname: localhost
+    ports:
+        - 4400:4400
+
+  product-webapp:
+    build: product-webapp/
+    image: product-webapp
+    depends_on:
+      - eureka-server
+      - api-gateway
+    restart: always
+    container_name: product-webapp
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 4200:4200
+
+
+
+
+  
+

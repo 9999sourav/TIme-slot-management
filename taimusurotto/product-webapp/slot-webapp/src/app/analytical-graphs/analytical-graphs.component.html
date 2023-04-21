@@ -1,0 +1,132 @@
+<div class="container">
+  <div style="margin-top: 20px">
+    <a routerLink="/adminDashboard" style="text-decoration: none"
+      ><button mat-raised-button color="primary" type="button">
+        <mat-icon>
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </mat-icon>
+        Go To DashBoard
+      </button></a>
+  </div>
+
+  <div class="row" style="margin-top: -20px;">
+    <div class="col-lg-4 col-md-12 col-md-12 col-sm-12 col-xs-12 col-xs-12">
+      <a routerLink="/cancellationGraph">
+        <mat-card class="example-card titlecenter">
+          <div style="text-align: center; padding-top: 15px">
+            <p
+              style="
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+                justify-self: center;
+              "
+            >
+              Cancellation Data
+            </p>
+            <img
+              mat-card-image
+              src="../../assets/images/graph.gif"
+              alt="Image Unavailable"
+            />
+          </div>
+        </mat-card>
+      </a>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+      <a routerLink="/candidateGraph">
+        <mat-card class="example-card titlecenter">
+          <div style="text-align: center; padding-top: 15px">
+            <p
+              style="
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+                justify-self: center;
+              "
+            >
+              Candidate Data
+            </p>
+            <img
+            mat-card-image
+            src="../../assets/images/donut.gif"
+            alt="Image Unavailable"
+          />
+          </div>
+        </mat-card>
+      </a>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+      <a routerLink="/interviewerGraph">
+        <mat-card class="example-card titlecenter">
+          <div style="text-align: center; padding-top: 15px">
+            <p
+              style="
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+                justify-self: center;
+              "
+            >
+              Interviewer data
+            </p>
+          </div>
+          <img
+            mat-card-image
+            src="../../assets/images/pie.gif"
+           
+            alt="Image Unavailable"
+          />
+        </mat-card>
+      </a>
+    </div>
+  </div>
+  <div class="row" id="row2">
+    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+      <a routerLink="/slotUtilization">
+        <mat-card class="example-card titlecenter">
+          <div style="text-align: center; padding-top: 15px">
+            <p
+              style="
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+                justify-self: center;
+              "
+            >
+              Slot Data
+            </p>
+          </div>
+          <img
+            mat-card-image
+            src="../../assets/images/dot.gif"
+            alt="Slot Data"
+          />
+        </mat-card>
+      </a>
+    </div>
+    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+      <a routerLink="/slotsGraph">
+        <mat-card class="example-card titlecenter">
+          <div style="text-align: center; padding-top: 15px">
+            <p
+              style="
+                color: black;
+                font-size: 22px;
+                font-weight: bold;
+                justify-self: center;
+              "
+            >
+              All Slot Data
+            </p>
+          </div>
+          <img
+            mat-card-image
+            src="../../assets/images/line.gif"
+            alt="Image Unavailable"
+          />
+        </mat-card>
+      </a>
+    </div>
+  </div>
+</div>

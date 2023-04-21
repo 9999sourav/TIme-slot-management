@@ -1,0 +1,36 @@
+<div class="container" style="width: 95%">
+  <mat-dialog-content>
+    <header>
+      <h1 id="one">Add-Details</h1>
+    </header>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+      <mat-form-field id="size" appearance="fill" class="example-full-width">
+        <input matInput placeholder="UserName*" formControlName="userName" type="text">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="['required']">
+          UserName is required*
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field id="size" appearance="fill" class="example-full-width">
+        <input matInput placeholder="Email*" formControlName="email" type="text">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="['required'] || ['email']">
+          Enter a Valid Email*
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-dialog-actions style="margin-top: 10px;">
+        <button color="warn" mat-raised-button type="reset">Reset</button>
+        <button class="end" style="margin-left: auto;" id="l1" color="primary" mat-button mat-raised-button
+          [disabled]="!registerForm.valid" type="submit">Submit</button>
+      </mat-dialog-actions>
+
+    </form>
+  </mat-dialog-content>
+</div>

@@ -1,0 +1,64 @@
+<div class="containter">
+    <div class="row" id="dashButton">
+        <a routerLink="/analyticsDashboard" style="text-decoration: none"><button mat-raised-button color="primary"
+                type="button">
+                <mat-icon>
+                    <span class="material-symbols-outlined"> arrow_back </span>
+                </mat-icon>
+                Go To Analytics
+            </button></a>
+    </div>
+    <div class="row" id="mainContent">
+        <div id="chartDiv">
+            <div class="col-12 charts" [hidden]="barValue">
+                <canvas id="barchart"  height="400px" width="600px" ></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="lineValue">
+                <canvas id="linechart" height="400px" width="600px" ></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="pieValue">
+                <canvas id="piechart" height="400px" width="600px" ></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="polarValue">
+                <canvas id="polarAreachart" height="400px" width="600px" ></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="doughValue">
+                <canvas id="doughnutchart" height="400px" width="600px" ></canvas>
+            </div>
+        </div>
+        <div>
+            <div>
+                <mat-chip-listbox [hidden]="selection">
+                    <mat-chip-option (click)="cancellationGraphs('bar','barchart')" color="accent" selected>Bar
+                        chart</mat-chip-option>
+                    <mat-chip-option (click)="cancellationGraphs('line','linechart')" color="accent">Line
+                        chart</mat-chip-option>
+                    <mat-chip-option (click)="cancellationGraphs('pie','piechart')" color="accent">Pie
+                        chart</mat-chip-option>
+                    <mat-chip-option (click)="cancellationGraphs('polarArea','polarAreachart')" color="accent"
+                        color="accent">Polar area</mat-chip-option>
+                    <mat-chip-option (click)="cancellationGraphs('doughnut','doughnutchart')" color="accent">doughnut
+                        chart</mat-chip-option>
+                </mat-chip-listbox>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <button (click)="increase()" mat-raised-button color="primary">
+                    <mat-icon>
+                        <span class="material-symbols-outlined"> arrow_upward </span>
+                    </mat-icon>
+                    Increase Date
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="decButton">
+                <button (click)="decrease()" mat-raised-button color="accent">
+                    <mat-icon>
+                        <span class="material-symbols-outlined"> arrow_downward </span>
+                    </mat-icon>
+                    Decrease Date</button>
+            </div>
+        </div>
+    </div>
+
+</div>

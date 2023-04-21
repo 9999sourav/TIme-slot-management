@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row" >
+        <div class="col-6" style="margin-top: 20px; margin-bottom: 20px;">
+        <a routerLink="/analyticsDashboard" style="text-decoration: none; margin-left: 20%;"
+        ><button mat-raised-button color="primary" type="button">
+          <mat-icon>
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </mat-icon>
+          Go To Analytics
+        </button></a>
+        </div>
+    </div>
+    <div class="row" style="text-align: center;">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <mat-card class="demo-inline-calendar-card" style="max-width: 60%; margin: auto !important;">
+            <mat-calendar [(selected)]="selected" (selectedChange)="dateChanged($event)"
+                ></mat-calendar>
+        </mat-card>
+    </div>
+    <div class="col-5 col-md-5 col-sm-12 col-xs-12" style="margin: auto !important;">
+        <div class="row">        
+            <div  class="charts" class="charts col-lg-6" [hidden]="barValue">
+                <canvas id="barchart"></canvas>
+            </div>
+            <div class="charts" class="charts col-lg-6" [hidden]="lineValue">
+                <canvas id="linechart"></canvas>
+            </div>
+            <div class="charts col-lg-6 col-sm-12" [hidden]="pieValue" style="max-height: 400px;">
+                <canvas id="piechart" ></canvas>
+            </div>
+            <div class="charts col-lg-6 col-sm-12" [hidden]="polarValue" style="max-height: 400px;">
+                <canvas id="polarAreachart"></canvas>
+            </div>
+            <div class="charts col-lg-6 col-sm-12" [hidden]="doughValue" style="max-height: 400px;">
+                <canvas id="doughnutchart"></canvas>
+            </div>
+        </div>
+        <div class="row">
+        <mat-chip-listbox id="last">
+            <mat-chip-option (click)="getUtilizationofslots('bar','barchart')" color="accent" selected>Bar
+                chart</mat-chip-option>
+            <mat-chip-option (click)="getUtilizationofslots('line','linechart')" color="accent">Line
+                chart</mat-chip-option>
+            <mat-chip-option (click)="getUtilizationofslots('pie','piechart')" color="accent">Pie
+                chart</mat-chip-option>
+            <mat-chip-option (click)="getUtilizationofslots('polarArea','polarAreachart')" color="accent"
+                color="accent">Polar area</mat-chip-option>
+            <mat-chip-option (click)="getUtilizationofslots('doughnut','doughnutchart')" color="accent">doughnut
+                chart</mat-chip-option>
+        </mat-chip-listbox>
+        </div>
+    </div>
+    </div>
+</div>

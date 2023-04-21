@@ -1,0 +1,19 @@
+<a routerLink="/bookSlot"><div class="card col-12"  *ngIf="!disabledBook">
+  <img class="card-img-top" src="../../assets/images/bookslot.jpg" alt="Card image cap" />
+  <div class="card-body">
+    <button href="#" class="btn btn-primary" [disabled]="disabledBook" (click)="book()">Book Your Slot</button>
+  </div>
+</div></a>
+
+<div class="card col-12"  *ngIf="!disabledCancel">
+  <img class="card-img-top" src="../../assets/images/cancel.jpg" alt="Card image cap" />
+  <div class="card-body">
+
+    <h2 class="card-text" style="color: green;">
+      You have already booked a slot for Date {{this.bookedSlot.slot_id.slot_date}}
+      {{this.bookedSlot.slot_id.slot_start_Time}} - {{this.bookedSlot.slot_id.slot_end_Time}}
+    </h2>
+    <h3 class="card-title">To cancel your slot click on beolow button</h3>
+    <button href="#" class="btn btn-danger" [disabled]="disabledCancel" (click)="cancel()">Cancel Slot</button>
+  </div>
+</div>

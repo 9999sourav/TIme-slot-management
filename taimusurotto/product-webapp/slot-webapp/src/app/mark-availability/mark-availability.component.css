@@ -1,0 +1,38 @@
+/* .example-custom-date-class {
+  background: orange;
+  border-radius: 100%;
+}
+
+.demo-inline-calendar-card {
+  width: 450px;
+  margin-left: -40px;
+}
+
+@media all and (max-width:992px){
+
+  mat-chip-listbox{
+    margin-top: 10px;
+  }
+} */
+
+dateClass.example-custom-date-class{
+  background-color: aqua;
+}
+.mdc-evolution-chip__cell{
+  background-color: aquamarine;
+}
+
+#open {
+  background: aqua !important;
+ }
+
+ #time{
+  background: #48CD8D !important;
+  justify-content: center;
+}
+#markButton{
+  color: #fff;
+}
+h3{
+  color: #7209B7;
+}

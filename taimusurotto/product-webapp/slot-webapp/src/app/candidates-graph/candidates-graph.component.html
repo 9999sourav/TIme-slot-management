@@ -1,0 +1,60 @@
+<div class="container" style="margin: 0;">
+    <div class="row" id="dashButton">
+        <a routerLink="/analyticsDashboard" style="text-decoration: none"><button mat-raised-button color="primary"
+                type="button">
+                <mat-icon>
+                    <span class="material-symbols-outlined"> arrow_back </span>
+                </mat-icon>
+                Go To Analytics
+            </button></a>
+    </div>
+    <div class="row" id="mainContent">
+        <div id="chartDiv">
+            <div class="col-12 charts" [hidden]="barValue">
+                <canvas id="barchart" width="500px"></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="lineValue">
+                <canvas id="linechart"></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="pieValue">
+                <canvas id="piechart"></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="polarValue">
+                <canvas id="polarAreachart"></canvas>
+            </div>
+            <div class="col-12 charts" [hidden]="doughValue">
+                <canvas id="doughnutchart" height="400px" width="600px"></canvas>
+            </div>
+        </div>
+        <div>
+            <mat-chip-listbox [hidden]="selection">
+                <mat-chip-option (click)="getCandidateDetails('bar','barchart')" color="accent" selected>Bar
+                    chart</mat-chip-option>
+                <mat-chip-option (click)="getCandidateDetails('line','linechart')" color="accent">Line
+                    chart</mat-chip-option>
+                <mat-chip-option (click)="getCandidateDetails('pie','piechart')" color="accent">Pie
+                    chart</mat-chip-option>
+                <mat-chip-option (click)="getCandidateDetails('polarArea','polarAreachart')" color="accent"
+                    color="accent">Polar area</mat-chip-option>
+                <mat-chip-option (click)="getCandidateDetails('doughnut','doughnutchart')" color="accent">doughnut
+                    chart</mat-chip-option>
+            </mat-chip-listbox>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                <button (click)="increase()" mat-raised-button style="margin-left: 10px;" color="primary">
+                    <mat-icon>
+                        <span class="material-symbols-outlined"> arrow_upward </span>
+                    </mat-icon>
+                    Increase Date
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" id="decButton">
+                <button (click)="decrease()" mat-raised-button color="accent">
+                    <mat-icon>
+                        <span class="material-symbols-outlined"> arrow_downward </span>
+                    </mat-icon>
+                    Decrease Date</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,30 @@
+#graph1 {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.example-card {
+    margin-top: 40px;
+    max-width: 75%;
+    max-height: 85%;
+    border: 2px solid black;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+ mat-card img{
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 175px
+}
+#row2{
+  margin-left: 150px;
+}
+
+@media all and (max-width:992px){
+
+  #row2{
+    margin-left: -10px;
+  }
+}

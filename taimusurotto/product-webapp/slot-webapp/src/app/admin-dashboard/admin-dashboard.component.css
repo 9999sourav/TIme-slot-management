@@ -1,0 +1,301 @@
+#start {
+  position: relative;
+  right: -100px;
+  bottom: -50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 40px;
+}
+
+.example-card {
+  margin-top: 40px;
+  max-width: 75%;
+  max-height: 85%;
+  padding: 2%;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* .example-header-image {
+  background-size: cover;
+} */
+mat-card img{
+  object-fit: cover; /*this makes the image in src fit to the size specified below*/
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 175px
+}
+
+#abc {
+
+  position: relative;
+  /* right: -100px; */
+  width: 250px;
+}
+
+#dash {
+
+  top: 20px;
+  border-radius: 20px;
+  background-color: rgb(26, 26, 197);
+  padding: 10px;
+  color: #ffffff;
+  border: none;
+  position: relative;
+  font-size: 20px;
+  font-weight: 8px;
+}
+
+title_center {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+#cls {
+
+  position: relative;
+  right: -90px;
+}
+
+#cls1 {
+
+  font-weight: bold;
+  font-size: 27px;
+  padding: 2px;
+  text-align: left;
+}
+
+#cls2 {
+
+
+  font-weight: bold;
+  font-size: 27px;
+  padding: 2px;
+  text-align: left;
+}
+
+#cls3 {
+
+
+  font-weight: bold;
+  font-size: 27px;
+  padding: 2px;
+  text-align: left;
+}
+
+#cls4 {
+
+
+  font-weight: bold;
+  font-size: 27px;
+  padding: 2px;
+  text-align: left;
+}
+
+#cls5 {
+
+
+  font-weight: bold;
+  font-size: 27px;
+  padding: 2px;
+  text-align: left;
+}
+
+#cls6 {
+
+  font-weight: bold;
+  font-size: 27px;
+  padding: 2px;
+  text-align: left;
+}
+
+
+
+
+@media all and (max-width:480px) {
+
+
+  #start {
+    position: relative;
+    right: -60px;
+    bottom: -110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+
+  #abc {
+
+    position: relative;
+    right: 50px;
+    width: 150px;
+  }
+
+  #dash {
+
+    top: 50px;
+    border-radius: 20px;
+    background-color: rgb(26, 26, 197);
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    position: relative;
+    font-size: 15px;
+    font-weight: 8px;
+    right: 1px;
+  }
+
+  #cls {
+
+    position: relative;
+    right: -90px;
+  }
+
+  #cls1 {
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls2 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls3 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls4 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls5 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls6 {
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+}
+
+@media all and (max-width:900px) {
+
+
+  #start {
+    position: relative;
+    right: -60px;
+    bottom: -110px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
+  }
+
+  #abc {
+
+    position: relative;
+    right: 50px;
+    width: 150px;
+  }
+
+  #dash {
+
+    top: 50px;
+    border-radius: 20px;
+    background-color: rgb(26, 26, 197);
+    padding: 10px;
+    color: #ffffff;
+    border: none;
+    position: relative;
+    font-size: 15px;
+    font-weight: 8px;
+    right: 1px;
+  }
+
+  #cls {
+
+    position: relative;
+    right: -90px;
+  }
+
+  #cls1 {
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls2 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls3 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls4 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls5 {
+
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+  #cls6 {
+
+    font-weight: bold;
+    font-size: 15px;
+    padding: 2px;
+    text-align: left;
+  }
+
+}

@@ -1,0 +1,56 @@
+<div class="container" style="width: 95%;">
+  <mat-dialog-content>
+    <header>
+      <h1 id="one">Add-Details</h1>
+    </header>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+
+      <mat-form-field id="size" appearance="fill" class="example-full-width">
+
+        <input matInput placeholder="FirstName*" formControlName="firstName" type="text">
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="['required']">
+          FirstName is required*
+        </mat-error>
+      </mat-form-field>
+
+
+      <p> <mat-form-field id="size" appearance="fill" class="example-full-width">
+
+          <input matInput placeholder="LastName*" formControlName="lastName" type="text">
+          <mat-icon matSuffix>person</mat-icon>
+          <mat-error *ngIf="['required']">
+            LastName is required*
+          </mat-error>
+        </mat-form-field></p>
+
+
+      <mat-form-field id="size" appearance="fill" class="example-full-width">
+
+        <input matInput placeholder="Email*" formControlName="email" type="email">
+        <mat-icon matSuffix>email</mat-icon>
+        <mat-error *ngIf="['required']">
+          Email is required*
+        </mat-error>
+      </mat-form-field><br>
+
+
+      <mat-form-field id="size" appearance="fill" class="example-full-width">
+
+        <input matInput placeholder="ConactNumber*" formControlName="phoneNumber" type="tel">
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-error *ngIf="['required']">
+          Valid phone number contains 10 digits starting with 7/8/9
+        </mat-error>
+      </mat-form-field>
+
+      <mat-dialog-actions>
+        <button class="end" color="warn" mat-raised-button type="reset">Reset</button>
+        <button class="end" style="margin-left: auto;" id="l1" color="primary" mat-button mat-raised-button
+          [disabled]="!registerForm.valid" type="submit">Submit</button>
+      </mat-dialog-actions>
+
+    </form>
+  </mat-dialog-content>
+</div>

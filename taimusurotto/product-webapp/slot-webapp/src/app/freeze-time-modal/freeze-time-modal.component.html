@@ -1,0 +1,30 @@
+<div class="container" style="padding: 10px; width: 600px;">
+<mat-dialog-content>
+
+<mat-form-field appearance="fill" class="col-12" style="max-width: 550px;">
+    <mat-label>Freeze Slots For :  </mat-label>
+    <input matInput [min]="minDate" [matDatepicker]="picker" (dateChange)="freezingDate($event)">
+    <mat-hint>For this Date, the slots will be frozen</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="col-12" style="max-width: 550px;">
+    <mat-label>Freeze Slot at : </mat-label>
+    <mat-select (selectionChange)="freezingTime($event)">
+      <mat-option *ngFor="let time of slots" value={{time}}>{{time}} hrs</mat-option>
+    </mat-select>
+    <mat-hint>At this time, the slots will be frozen</mat-hint>
+  </mat-form-field>
+
+  <div class="row" style="margin-top: 10px; width: 550px !important;">
+    <div class="col-10">
+        <button type="button" class="btn btn-danger">Cancel</button>
+    </div>
+    <div class="col-2">
+        <button type="button" class="btn btn-success" (click)="submit()">Set Freeze Time</button>
+    </div>
+    </div>
+
+</mat-dialog-content>
+</div>

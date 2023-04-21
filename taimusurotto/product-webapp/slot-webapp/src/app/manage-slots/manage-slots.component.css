@@ -1,0 +1,43 @@
+img{
+    position: absolute;
+    right: 100px;
+    top: 16px;
+ }
+ #toggle{
+    display: inline;
+ }
+ #date{
+    margin-top: 30px;
+    margin-left: 10px;
+ }
+ #button1{
+    background-color: #3A0CA3; 
+    color: white; 
+    margin-top: 10px; 
+    margin-left: 120px;
+ }
+  .demo-inline-calendar-card{
+    width: 450px;
+  }
+  mat-card{
+  background-color:#fff;
+  } 
+  #table1{
+    margin-left: 10px;
+    border: 1px solid white;
+    margin-top: 30px;
+    width:600px;
+  }
+  #tableHeading{
+  color: #fff;
+  font-size: 15px;
+  /* margin-left: 50px; */
+  background-color: #4361EE;
+  }
+td,tr{
+    text-align: center;
+}
+mat-chip{
+   background-color: aquamarine !important;
+ }
+  

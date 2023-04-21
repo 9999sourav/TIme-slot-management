@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">    
+        <div>
+            <a routerLink="/adminDashboard" style="text-decoration: none;"><button mat-raised-button color="primary" type="button" style=" margin-top: 20px; margin-left: 40px;" > <mat-icon>
+              <span class="material-symbols-outlined">
+                arrow_back
+              </span>
+            </mat-icon> Go To DashBoard</button></a>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 col-sm-12 col-xs-12" style="padding: 50px; padding-bottom: 0;">
+            <mat-card>
+                <mat-calendar [(selected)]="selected" [minDate]="minDate" (_userSelection)="getAllSlots()"></mat-calendar>
+            </mat-card>
+            <br>
+            <br>
+        </div>
+        <div class="col-6" style="margin: 30px">
+            <div class="row">
+                <div class="col-12" style="padding:20px;">
+                    <h3>Available Slots : </h3>
+                    <div>
+                        <div *ngIf="!checkSlotsPresent()">No Slots Available</div>
+                        <mat-chip-listbox aria-label="slot selection">
+                            <div class="slots" style="display: inline-flex; flex-wrap: wrap;">
+                                <div *ngFor="let slot of slots">
+                                    <mat-chip [disabled]="slot.bookings>slot.limit" id="time"
+                                        (click)="addToList(slot)" matTooltip="" >
+                                        {{ slot.slot_start_Time }} - {{slot.slot_end_Time}}
+                                        <button matChipRemove (click)="deleteSlot(slot)">
+                                            <mat-icon>cancel</mat-icon>
+                                        </button>
+                                    </mat-chip>
+                                </div>
+                            </div>
+                        </mat-chip-listbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

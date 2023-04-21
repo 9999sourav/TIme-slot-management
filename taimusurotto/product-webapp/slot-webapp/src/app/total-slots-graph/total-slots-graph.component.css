@@ -1,0 +1,52 @@
+@media (min-width:800px){
+    .charts{
+        max-width:500px;
+        max-height:350px;
+    }
+    #dashButton{
+        margin-top: 10vh; 
+        margin-left: 20vw;
+    }
+    #mainContent{
+        margin-left: 30vw; 
+    }
+}
+
+@media (max-width:799px) and (min-width:401px){
+    .charts{
+        max-width:300px;
+    }
+    #dashButton{
+        max-width:300px;
+        margin-top: 10vh; 
+        margin-left: 15vw;
+    }
+    #mainContent{
+        max-width:300px;
+        margin-left: 25vw; 
+    }
+
+}
+
+
+@media (max-width:400px){
+    .charts{
+        max-width:300px;
+    }
+    #dashButton{
+        max-width:300px;
+        margin-top: 10vh; 
+        margin-left: 5vw;
+    }
+    #mainContent{
+        max-width:300px;
+        margin-left: 5vw; 
+    }
+    #decButton{
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+}
+
+
+

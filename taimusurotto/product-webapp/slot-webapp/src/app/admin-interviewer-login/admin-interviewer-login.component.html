@@ -1,0 +1,36 @@
+<div class="container" style="text-align: center; padding-top: 10vh;">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style="margin-top: auto;">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12" style="margin-top: auto;">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          
+                <mat-form-field id="size" appearance="fill" class="example-full-width">
+
+                    <input matInput placeholder="Enter Email" formControlName="email" type="text">
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error *ngIf="['required']">
+                        Email is required
+                    </mat-error>
+                </mat-form-field>
+
+
+                <p> <mat-form-field id="size" appearance="fill" class="example-full-width">
+
+                        <input matInput placeholder="Enter Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf="['required']">
+                           Password Required
+                        </mat-error>
+                    </mat-form-field></p>
+
+                    <button id="l1" color="primary" mat-raised-button
+                        color="primary" type="submit" [disabled]=!registerForm.valid >LOGIN</button>
+            </form>
+        </div>
+    </div>
+    
+  </div>

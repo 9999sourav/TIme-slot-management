@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">    
+     <div class="row">
+        <div class="col-lg-9 col-md-8  col-sm-12 col-xs-12">
+            <a routerLink="/adminDashboard" style="text-decoration: none;"><button mat-raised-button color="primary" type="button"style=" color: white; margin: 20px 40px;" > <mat-icon>
+                <span class="material-symbols-outlined">
+                    arrow_back
+                </span>
+            </mat-icon> Go To DashBoard</button></a>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm 12 col-xs-12">
+            <button type="button" mat-raised-button color="primary" (click)="openModal()" style=" color: white; margin: 20px 40px;">Set Freeze Time</button>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-5 col-sm-12" style="padding: 0 50px;">
+          <mat-card>
+              <mat-calendar [(selected)]="selected" [minDate]="minDate" (_userSelection)="onChange()"></mat-calendar>
+          </mat-card>
+          <br>
+          <br>
+      </div>
+      <div class="col-6" style="margin: 30px">
+          <div class="row">
+              <div class="col-12" style="padding:20px;">
+                <div class="row">
+                    <h3 class="col-9" style="font-size: 20px; font-weight: bold; letter-spacing: 0.5px; color: #3F51B5;">Available Slots : </h3>
+                    <button mat-raised-button color="primary" type="button" class="col-lg-3 col-sm-4" (click)="selectAll()">Select All<mat-icon>check_circle_outline</mat-icon></button>
+                </div>
+                  <div>
+                      <mat-chip-listbox aria-label="slot selection">
+                          <div class="slots" style="display: inline-flex; flex-wrap: wrap;">
+                              <div *ngFor="let slot of slots">
+                                  <mat-chip [disabled]="slot.bookings>slot.limit" id="time"
+                                      (click)="addToList(slot)" matTooltip="">
+                                      {{ slot.slot_start_Time }} - {{slot.slot_end_Time}}
+                                  </mat-chip>
+                              </div>
+                          </div>
+                      </mat-chip-listbox>
+
+                  </div>
+              </div>
+              <div class="col-12" style="padding: 20px;">
+                  <div *ngIf="creationSlots!=null">
+                    <div class="row">
+                        <h3 class="col-9" style="font-size: 20px; font-weight: bold; letter-spacing: 0.5px; color: #FF4081;">Chosen Slots : </h3>
+                        <button mat-raised-button color="warn" type="button" class="col-lg-3 col-sm-4" (click)="deSelectAll()">Clear<i class="material-icons">delete</i></button>
+                    </div>
+                      <mat-chip-listbox aria-label="slot selection">
+                          <div style="display: inline-flex; flex-wrap: wrap;">
+                              <div *ngFor="let slot of creationSlots">
+                                  <mat-chip class="selected" id="open" matTooltip="">
+                                      {{ slot.slot_start_Time }} - {{slot.slot_end_Time}}
+                                      <button matChipRemove (click)="remove(slot)">
+                                          <mat-icon>cancel</mat-icon>
+                                      </button>
+                                  </mat-chip>
+                              </div>
+                          </div>
+                      </mat-chip-listbox>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+          <div class="row" style="text-align: center; padding: 0 50px;">
+              <button type="button" style="font-size: 20px; font-weight: bold; letter-spacing: 0.8px; color: white;"  class="btn btn-info" id="markButton" (click)="createSlots()">Create Slots</button>
+          </div>
+</div>

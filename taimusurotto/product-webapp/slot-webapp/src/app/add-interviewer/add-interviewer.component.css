@@ -1,0 +1,40 @@
+/* table {
+  width: 100%;
+  margin-top: 50px;
+} */
+#one{
+  background-color: rgb(226, 66, 120);
+  color: white;
+font-size: 16px;
+}
+/* #size{
+  font-size: 17px;
+} */
+
+/* #en{
+  position: relative;
+  bottom: -50px;
+ right: -120px;
+} */
+
+.container{
+  background-image: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+}
+
+.table { 
+  table-layout:fixed;
+}
+
+.td { 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 480px) {
+  /* horizontal scrollbar for tables if mobile screen */
+  .tablemobile {
+      overflow-x: auto;
+      display: block;
+  }
+}

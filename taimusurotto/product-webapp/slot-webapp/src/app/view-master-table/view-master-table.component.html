@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="row">
+        <div style="margin-top: 20px;">
+            <a routerLink="/adminDashboard" style="text-decoration: none;"><button mat-raised-button color="primary" type="button" > <mat-icon>
+              <span class="material-symbols-outlined">
+                arrow_back
+              </span>
+            </mat-icon> Go To DashBoard</button></a>
+          </div>
+    </div>
+    <div class="row">
+        <div id="slotDetails" style="margin-top: 20px;" class="col-12">
+            <table class="table table-bordered display compact tablemobile" datatable [dtOptions]="dtOptions"
+                [dtTrigger]="dtTrigger">
+                <thead>
+                    <tr style="text-align: center; background-color:#3A0CA3; color:#fff">
+                        <th scope="col">S.No.</th>
+                        <th scope="col">Interviewee</th>
+                        <th scope="col">Interview Date</th>
+                        <th scope="col">Interview Time</th>
+                        <th scope="col">Interviewer</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Cancelled By</th>
+                        <th scope="col">Remarks</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let slot of allSlots; let i = index;" id={{slot.status}}>
+                        <td>{{i + 1}}</td>
+                        <td>
+                            <div *ngIf="slot.interviewee!=null">
+                                {{slot.interviewee.firstName}}
+                            </div>
+                            <div *ngIf="slot.interviewee==null">
+                                Not Booked Yet
+                            </div>
+                        </td>
+                        <td>{{slot.slot_id.slot_date}}</td>
+                        <td>{{slot.slot_id.slot_start_Time}} - {{slot.slot_id.slot_end_Time}}</td>
+                        <td>
+                            {{slot.interviewer.firstName}}
+                        </td>
+                        <td>{{slot.status}}</td>
+                        <td>
+                            <div *ngIf="slot.canceled_by!=null">
+                                {{slot.canceled_by}}
+                            </div>
+                            <div
+                                *ngIf="slot.canceled_by==null">
+                                Not Cancelled
+                            </div>
+                        </td>
+                        <td>
+                            <div *ngIf="slot.remarks!=null">
+                                {{slot.remarks}}
+                            </div>
+                            <div *ngIf="slot.remarks==null">
+                                No Remarks Given Yet
+                            </div>
+                        </td>
+                        <td style="text-align: center;">
+                            <div *ngIf="slot.status.toLowerCase()=='completed' && slot.remarks==null && slot.interviewee!=null">
+                                <button type="button" class="btn " style="background-color: #4361EE; color: white; width: 160px;" disabled>Remarks Awaited</button>
+                            </div>
+                        <div *ngIf="(slot.status.toLowerCase()=='completed' || slot.status.toLowerCase()=='completed/f') && slot.remarks!=null && slot.interviewee!=null">
+                            <button type="button" class="btn " style="background-color: green; color: white;  width: 160px" disabled>Marked</button>
+                        </div>
+                        <div *ngIf="slot.status.toLowerCase()=='cancelled' || slot.status.toLowerCase()=='cancelled/f' ">
+                            <button type="button" class="btn" style="background-color: orange; color: white;  width: 160px" disabled>Cancelled</button>
+                        </div>
+                        <div *ngIf="slot.status.toLowerCase()=='open' || slot.status.toLowerCase()=='booked' || slot.status.toLowerCase()=='booked/f' ">
+                            <button type="button" class="btn" style="background-color: red; color: white;  width: 160px" (click)="cancelSlot(slot)">Cancel Slot</button>
+                        </div>
+                        <div *ngIf="(slot.status.toLowerCase()=='completed' && slot.interviewee==null) || (slot.status.toLowerCase()=='open/f')">
+                            <button type="button" class="btn " style="background-color:#ff9966; color: white;  width: 160px" disabled>No Booking</button>
+                        </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
