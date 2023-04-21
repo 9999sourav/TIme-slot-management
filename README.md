@@ -7,5 +7,8 @@ Projec Requrements
 5.When a slot is cancelled by interviewee, changes are made in master table and that particular slot is opened so that it can be be booked again.
 
 ![image](https://user-images.githubusercontent.com/108174775/233680983-e3f129fe-f145-4497-9c90-1d08187e82f1.png)
+![image](https://user-images.githubusercontent.com/108174775/233681074-253bf7d3-4a58-4484-9f3f-705396a7cc63.png)
+![image](https://user-images.githubusercontent.com/108174775/233681119-96daec4c-fcc8-4ba4-992d-227854beba2e.png)
+![image](https://user-images.githubusercontent.com/108174775/233681183-540e3e3a-438f-47c8-b098-d5817164b217.png)
 
 
